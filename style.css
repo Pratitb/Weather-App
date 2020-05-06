@@ -25,6 +25,7 @@ body{
 }
 .location-timezone{
     margin: 5%;
+    font-size:4em;
 }
 .temperature{
     flex-direction: column;

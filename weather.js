@@ -5,10 +5,9 @@ window.addEventListener('load', ()=>{
     let long;
     let lat;
     let temperatureDescription = document.querySelector('.tempeature-description');
+    let degree = document.querySelector('.degree-section');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
-    let title = document.querySelector('title');
-    let temperature = document.querySelector('.temperature');
     const temperatureSpan = document.querySelector('span');
 if(navigator.geolocation){
 navigator.geolocation.getCurrentPosition(function(position){
@@ -28,7 +27,7 @@ var api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon='
         //data is the actual data
         console.log(data);
         const {temp} = data.main;
-        const {description, icon} = data.weather[0];
+        const {description} = data.weather[0];
         const {name} = data;
         //set dom elements from api
         //change the text
@@ -42,14 +41,14 @@ var api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon='
         //title.innerHTML = (name + ',' + ' ' + description);
       //change from c to f or f to c
       //we need to check if it is c or f
-      temperature.addEventListener("click", function(){
+      degree.addEventListener("click", function(){
           if(temperatureSpan.textContent === "C"){
               temperatureSpan.textContent = "F";
               temperatureDegree.textContent = Math.floor(fahrenheit);
           }
           else{
               temperatureSpan.textContent = "C";
-              temperatureDegree.textContent = temp;
+              temperatureDegree.textContent = Math.floor(temp);
           }
       })  
     });

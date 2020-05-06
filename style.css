@@ -23,6 +23,9 @@ body{
     /*items are placed with space around*/
     align-items:center;
 }
+.location{
+    cursor: default;
+}
 .location-timezone{
     margin: 5%;
     font-size:4em;
@@ -35,12 +38,15 @@ body{
     align-items:center;
     cursor: pointer;
 }
+.degree-section h2{
+    font-size:40px;
+}
 .degree-section span{
     margin:10px;
     font-size:30px;
 }
-.degree-section h2{
-    font-size:40px;
+.tempeature-description{
+    cursor: default;
 }
 hr{
     width:100vh;
